@@ -1,5 +1,5 @@
 -- file : mux21a.vhd
--- fuction : s控制2选1输出（第1种实现方法）
+-- fuction : s控制二选一输出a或b（第1种实现方法）
 -- author : ojw
 -- createDate : 2019-09-12
 -- source : book example 3-1 on page58
