@@ -4,6 +4,9 @@
 -- createDate : 2019-09-13
 -- source : another implement for example 3.1 on page58,reference of 3.3 on page66
 
+-- update : 2019-12-22
+-- updateFor : 调整代码规范，增加中文注释
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
