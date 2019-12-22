@@ -4,6 +4,9 @@
 -- date : 2019-09-09
 -- source : book example 3-13 on page81
 
+-- update : 2019-12-22
+-- updateFor : 调整代码规范，增加中文注释
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
