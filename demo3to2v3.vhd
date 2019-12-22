@@ -1,6 +1,5 @@
 -- file : demo3to2v3.vhd
 -- function : 半加器（when-else实现，真值表）
--- device : Cyclone EP1C20F400C8
 -- author : ojw
 -- createDate : 2019-09-22
 -- source : example 3-2 on page61 in WHEN-ELSE
