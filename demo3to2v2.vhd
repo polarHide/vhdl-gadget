@@ -1,8 +1,8 @@
 -- file : demo3to2v2.vhd
--- function : example 3-2 on page61 in CASE
--- device : Cyclone EP1C20F400C8
+-- function : 半加器（case实现，真值表）
 -- author : ojw
 -- createDate : 2019-09-22
+-- source : example 3-2 on page61 in CASE
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
@@ -32,4 +32,4 @@ BEGIN
 		SO <= R(1);
 		CO <= R(0);	
 	END PROCESS;
-END ARCHITECTURE fh2;
+END ARCHITECTURE fh2
