@@ -4,6 +4,9 @@
 -- author : ojw
 -- createDate : 2019-10-6
 
+-- update : 2019-12-22
+-- updateFor : 调整代码规范
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
