@@ -1,4 +1,4 @@
-# vhdl_gadget
+# vhdl-gadget
 ## 不定期更新 vhdl小玩意
 
 [二选一输出（第1种实现方法）](https://github.com/polarHide/vhdl-gadget/blob/master/mux21a.vhd)  
