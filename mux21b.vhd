@@ -1,6 +1,7 @@
-
--- date : 2019-09-13
+-- file : mux21b.vhd
+-- function : s控制二选一输出a或b（第2种实现方法）
 -- author : ojw
+-- createDate : 2019-09-13
 -- source : another implement for example 3.1 on page58,reference of 3.3 on page66
 
 LIBRARY IEEE;
@@ -8,14 +9,14 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_ARITH.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--- recommend the three declaration together
-
 ENTITY mux21b IS
-	PORT ( a,b,s : IN STD_LOGIC ;
-			   y : OUT STD_LOGIC );
+	PORT( 
+		a, b, s : IN STD_LOGIC ;
+		y       : OUT STD_LOGIC
+	);
 END ENTITY mux21b;
 
 ARCHITECTURE bhv OF mux21b IS
 BEGIN
-	y <= (s AND a) OR ((NOT s) AND b);
+	y <= (s AND a) OR ((NOT s) AND b);	-- 真值表或其他方法找到逻辑表达式（布尔表达式）
 END ARCHITECTURE bhv ;
