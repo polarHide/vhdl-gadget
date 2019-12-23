@@ -1,5 +1,5 @@
 -- file : vector2.vhd
--- function : test on STD_LOGIC_VECTOR
+-- function : 对STD_LOGIC_VECTOR的downto,to,赋值的理解
 -- device : Cyclone EP1C20F400C8
 -- author : ojw
 -- createDate : 2019-09-25
@@ -8,12 +8,11 @@ LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY vector2 IS
-	PORT 
-	(
+	PORT (
 		A : BUFFER STD_LOGIC_VECTOR ( 1 TO 4 );
 		B : OUT STD_LOGIC_VECTOR ( 7 DOWNTO 0 );
 		S : IN STD_LOGIC_VECTOR ( 1 DOWNTO 0 )	--	control
-	);
+		);
 END ENTITY vector2;
 
 ARCHITECTURE fh OF vector2 IS
