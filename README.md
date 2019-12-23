@@ -9,3 +9,4 @@
 [半加器（if-then-elsif实现，真值表）](https://github.com/polarHide/vhdl-gadget/blob/master/demo3to2v1.vhd)  
 [半加器（case实现，真值表）](https://github.com/polarHide/vhdl-gadget/blob/master/demo3to2v2.vhd)  
 [半加器（when-else实现，真值表）](https://github.com/polarHide/vhdl-gadget/blob/master/demo3to2v3.vhd)  
+[对STD_LOGIC_VECTOR的downto,to,赋值的理解](https://github.com/polarHide/vhdl-gadget/blob/master/vector2.vhd)
