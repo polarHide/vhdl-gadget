@@ -9,7 +9,7 @@
 [半加器（基于半加器真值表的if-then-elsif实现）](https://github.com/polarHide/vhdl-gadget/blob/master/demo3to2v1.vhd)  
 [半加器（基于半加器真值表的case实现）](https://github.com/polarHide/vhdl-gadget/blob/master/demo3to2v2.vhd)  
 [半加器（基于半加器真值表的when-else实现）](https://github.com/polarHide/vhdl-gadget/blob/master/demo3to2v3.vhd)  
-[半加器（基于半加器真值表的select实现）](https://github.com/polarHide/vhdl-gadget/edit/master/demo3to2v4.vhd)
+[半加器（基于半加器真值表的select实现）](https://github.com/polarHide/vhdl-gadget/edit/master/demo3to2v4.vhd)  
 [验证对STD_LOGIC_VECTOR的downto,to,赋值的理解](https://github.com/polarHide/vhdl-gadget/blob/master/vector2.vhd)  
 [自动加载型16位二进制数计数器（16位可控分频器）：单进程实现](https://github.com/polarHide/vhdl-gadget/blob/master/coun16b.vhd)  
 [自动加载型16位二进制数计数器（16位可控分频器）：2进程实现](https://github.com/polarHide/vhdl-gadget/blob/master/counter16b.vhd)  
