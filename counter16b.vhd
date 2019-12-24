@@ -1,21 +1,20 @@
 -- file : counter16b.vhd
--- fuction : ÐÞ¸ÄÀý5-15
--- 			½øÎ»Êä³öCOUTÓëÒì²½¼ÓÔØ¿ØÖÆLOADÏàÁ¬£¬¹¹³É×Ô¶¯¼ÓÔØÐÍ16Î»¶þ½øÖÆÊý¼ÆÊýÆ÷£¨16Î»¿É¿Ø·ÖÆµÆ÷£©
+-- fuction : ä¿®æ”¹ä¾‹5-15
+------------ è¿›ä½è¾“å‡ºCOUTä¸Žå¼‚æ­¥åŠ è½½æŽ§åˆ¶LOADç›¸è¿žï¼Œæž„æˆè‡ªåŠ¨åŠ è½½åž‹16ä½äºŒè¿›åˆ¶æ•°è®¡æ•°å™¨ï¼ˆ16ä½å¯æŽ§åˆ†é¢‘å™¨ï¼‰ï¼Œ2è¿›ç¨‹å®žçŽ°
 -- device : Cyclone EP1C20F400C8
 -- author : ojw
 -- createDate : 2019-10-09
-
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY counter16b IS
-	PORT (
-			 CLK : IN STD_LOGIC;
-			DATA : IN STD_LOGIC_VECTOR (15 DOWNTO 0);	-- 16Î»Ô¤ÖÃÊý
-			DOUT : BUFFER STD_LOGIC						-- ¼ÆÊýÖµÊä³ö					
-);
+PORT (
+	CLK  : IN STD_LOGIC;
+	DATA : IN STD_LOGIC_VECTOR (15 DOWNTO 0);	-- 16ä½é¢„ç½®æ•°
+	DOUT : BUFFER STD_LOGIC						-- è®¡æ•°å€¼è¾“å‡º					
+	);
 END counter16b;
 
 ARCHITECTURE bhv OF counter16b IS
@@ -25,8 +24,8 @@ BEGIN
 	VARIABLE cnt : STD_LOGIC_VECTOR(15 DOWNTO 0);
 	BEGIN 
 	
-		IF CLK'EVENT AND CLK='1' THEN	-- ÉÏÉýÑØ´¥·¢
-			IF cnt=0  THEN					-- ¼ÆÊýÊ¹ÄÜ¸ßµçÆ½£¬ÔÊÐí¼ÆÊý
+		IF CLK'EVENT AND CLK='1' THEN	-- ä¸Šå‡æ²¿è§¦å‘
+			IF cnt=0  THEN					-- è®¡æ•°ä½¿èƒ½é«˜ç”µå¹³ï¼Œå…è®¸è®¡æ•°
 				cnt := DATA-1;
 				DOUT <= '1';
 			ELSIF cnt=('0'&DATA(15 DOWNTO 1)) THEN
@@ -47,6 +46,5 @@ BEGIN
 			ELSE DOUT<='0';
 			END IF;
 		END IF;
-	END PROCESS;
-		
+	END PROCESS;		
 END bhv;
