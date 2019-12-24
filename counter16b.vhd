@@ -1,5 +1,5 @@
 -- file : counter16b.vhd
--- fuction : 修改例5-15
+-- fuction : 优化例5-15
 ------------ 进位输出COUT与异步加载控制LOAD相连，构成自动加载型16位二进制数计数器（16位可控分频器），2进程实现
 -- device : Cyclone EP1C20F400C8
 -- author : ojw
