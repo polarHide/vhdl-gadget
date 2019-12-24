@@ -1,5 +1,5 @@
 -- file : parity5checker.
--- fuction : Í¬²½Ê±Ðò£¬Ã¿5Î»´®ÐÐ¶þ½øÖÆÊäÈë£¬Êä³öÆæÅ¼Ð£Ñé½á¹û£¬ÆæÊý¸ö1ÔÚ×îºóÒ»Î»Êä³ö1
+-- fuction : åŒæ­¥æ—¶åºï¼Œæ¯5ä½ä¸²è¡ŒäºŒè¿›åˆ¶è¾“å…¥ï¼Œè¾“å‡ºå¥‡å¶æ ¡éªŒç»“æžœï¼Œå¥‡æ•°ä¸ª1åœ¨æœ€åŽä¸€ä½è¾“å‡º1
 -- device : Cyclone EP1C20F400C8
 -- author : ojw
 -- createDate : 2019-10-15
@@ -9,27 +9,27 @@ USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 USE IEEE.STD_LOGIC_1164.ALL;
 
 ENTITY parity5checker IS
-PORT (
-	   CLK, SerialIn : IN STD_LOGIC;	-- CLKÊ±ÖÓÐÅºÅ£¬SerialIn´®ÐÐÊäÈë
-			CheckOut : OUT STD_LOGIC	-- CheckOut¼ìÑéÊä³ö		
+PORT(
+	CLK, SerialIn : IN STD_LOGIC;	-- CLKæ—¶é’Ÿä¿¡å·ï¼ŒSerialInä¸²è¡Œè¾“å…¥
+	CheckOut 	  : OUT STD_LOGIC	-- CheckOutæ£€éªŒè¾“å‡º		
 	  );
 END ENTITY;
 
 ARCHITECTURE bhv OF parity5checker IS
 BEGIN
 	PROCESS( CLK, SerialIn )
-		VARIABLE Q : STD_LOGIC_VECTOR( 4 DOWNTO 0 );	-- ´®ÐÐÊäÈë×ª»»Êý×é£¬¿í¶È5Î»
-		VARIABLE cnt : STD_LOGIC_VECTOR( 2 DOWNTO 0 );	-- ¼ÆÊý
+		VARIABLE Q : STD_LOGIC_VECTOR( 4 DOWNTO 0 );	-- ä¸²è¡Œè¾“å…¥è½¬æ¢æ•°ç»„ï¼Œå®½åº¦5ä½
+		VARIABLE cnt : STD_LOGIC_VECTOR( 2 DOWNTO 0 );	-- è®¡æ•°
 	BEGIN
-		IF rising_edge( CLK ) THEN	-- ÉÏÉýÑØ´¥·¢
+		IF rising_edge( CLK ) THEN	-- ä¸Šå‡æ²¿è§¦å‘
 			CheckOut<='0';		
 			IF cnt=4 THEN
-				cnt:="000";		-- Ã¿¶Á5Î»½«cntÇåÁã
-				Q := SerialIn & Q( 4 DOWNTO 1 );	-- ÖðÎ»¶Á½ø
-				CheckOut<=Q(4) XOR Q(3) XOR Q(2) XOR Q(1) XOR Q(0);		-- ¼ÆÊýÊ±´ï5Î»Êä³ö¼ìÑé½á¹û			
+				cnt:="000";		-- æ¯è¯»5ä½å°†cntæ¸…é›¶
+				Q := SerialIn & Q( 4 DOWNTO 1 );	-- é€ä½è¯»è¿›
+				CheckOut<=Q(4) XOR Q(3) XOR Q(2) XOR Q(1) XOR Q(0);		-- è®¡æ•°æ—¶è¾¾5ä½è¾“å‡ºæ£€éªŒç»“æžœ			
 			ELSE
-				cnt := cnt + 1;		-- Ã¿¶Á½ø1Î»½«¼ÆÊýcnt¼Ó1
-				Q := SerialIn & Q( 4 DOWNTO 1 );	-- ÖðÎ»¶Á½ø
+				cnt := cnt + 1;		-- æ¯è¯»è¿›1ä½å°†è®¡æ•°cntåŠ 1
+				Q := SerialIn & Q( 4 DOWNTO 1 );	-- é€ä½è¯»è¿›
 			END IF;			
 		END IF;
 	END PROCESS;
