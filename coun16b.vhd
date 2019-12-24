@@ -1,6 +1,6 @@
 -- file : counter16b.vhd
 -- fuction : 优化例5-15
------------  进位输出COUT与异步加载控制LOAD相连，构成自动加载型16位二进制数计数器（16位可控分频器）
+-----------  进位输出COUT与异步加载控制LOAD相连，构成自动加载型16位二进制数计数器（16位可控分频器），单进程实现
 -- device : Cyclone EP1C20F400C8
 -- author : ojw
 -- createDate : 2019-10-09
@@ -10,11 +10,11 @@ USE IEEE.STD_LOGIC_1164.ALL;
 USE IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 ENTITY coun16b IS
-	PORT (
-		 CLK,RST,EN,LOAD : IN STD_LOGIC;	-- CLK时钟信号输入端,LOAD预置初值使能端:高电平有效,RST清零端:高电平有效,EN计数使能端,高电平有效
-		 DATA 		 	 : IN STD_LOGIC_VECTOR (15 DOWNTO 0);
-		 DOUT 			 : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
-		 COUT			 : OUT STD_LOGIC	--COUT进位输出,计数满2^16产生一个进位
+PORT (
+	CLK,RST,EN,LOAD : IN STD_LOGIC;	-- CLK时钟信号输入端,LOAD预置初值使能端:高电平有效,RST清零端:高电平有效,EN计数使能端,高电平有效
+	DATA 		 	: IN STD_LOGIC_VECTOR (15 DOWNTO 0);
+	DOUT 			: OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
+	COUT			: OUT STD_LOGIC	--COUT进位输出,计数满2^16产生一个进位
 );
 END coun16b;
 
@@ -39,7 +39,7 @@ BEGIN
 		END IF;
 		
 		COUT<=LOAD;
-		DOUT<=Q;
-		
+		DOUT<=Q;	
+				
 	END PROCESS;
 END bhv;
