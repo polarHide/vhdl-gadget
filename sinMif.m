@@ -32,4 +32,3 @@ for i = 1 : N
     fprintf(fild,'%s\n',';');
 end
 fprintf(fild,'%s\n','END');
-
