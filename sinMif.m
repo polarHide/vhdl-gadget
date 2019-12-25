@@ -1,26 +1,32 @@
-F1 = 1; %ĞÅºÅµÄÆµÂÊ
-Fs = 2^7;  %²ÉÑùÆµÂÊ
-P1 = 0; %ĞÅºÅ³õÏàÎ»0
-N = 2^7; %²ÉÑùµãÊı128µã
-t = [0 : 1/Fs : (N-1)/Fs];  %²ÉÑùÊ±¿Ì
-ADC = 2^5;  %Ö±Á÷·ÖÁ¿
-A = 2^4;  %ĞÅºÅ·ù¶È
-s = A*sin(2*pi*F1*t + pi*P1/180) + ADC; %Éú³ÉĞÅºÅ
-plot(s);  %»æÖÆÍ¼ĞÎ
-fild = fopen('c:/sinMif/sin8bit_128.mif','wt');  %´´½¨mifÎÄ¼ş
-% Ğ´ÈëmifÎÄ¼şÎÄ¼şÍ·
-fprintf(fild,'%s\n','WIDTH=8;');    %Î»¿í
-fprintf(fild,'%s\n\n','DEPTH=128;');   %Éî¶È
-fprintf(fild,'%s\n','ADDRESS_RADIX=BIN;');  %µØÖ·¸ñÊ½
-fprintf(fild,'%s\n\n','DATA_RADIX=BIN;');   %Êı¾İ¸ñÊ½
-fprintf(fild,'%s\t','CONTENT'); %µØÖ·
+% file : sinMif.m
+% function : ä½¿ç”¨matlabç”Ÿæˆmifæ–‡ä»¶ï¼Œå­˜ä¸ºsin8bit_128.mifï¼Œä½œä¸º8ä½æ•°æ®çº¿ã€10ä½åœ°å€çº¿çš„RAMç¨‹åºçš„åˆå§‹åŒ–æ–‡ä»¶
+% sin8bit_128.mif : å«128ä¸ªç‚¹ï¼Œæ¯ä¸ªç‚¹8ä½äºŒè¿›åˆ¶æ•°çš„ä¸€ä¸ªå‘¨æœŸçš„æ­£å¼¦æ³¢æ³¢å½¢ï¼Œè®¾åˆç›¸ä½ä¸º0
+% author : ojw
+% createDate : 2019-10-22
+
+F1 = 1; %ä¿¡å·çš„é¢‘ç‡
+Fs = 2^7;  %é‡‡æ ·é¢‘ç‡
+P1 = 0; %ä¿¡å·åˆç›¸ä½0
+N = 2^7; %é‡‡æ ·ç‚¹æ•°128ç‚¹
+t = [0 : 1/Fs : (N-1)/Fs];  %é‡‡æ ·æ—¶åˆ»
+ADC = 2^5;  %ç›´æµåˆ†é‡
+A = 2^4;  %ä¿¡å·å¹…åº¦
+s = A*sin(2*pi*F1*t + pi*P1/180) + ADC; %ç”Ÿæˆä¿¡å·
+plot(s);  %ç»˜åˆ¶å›¾å½¢
+fild = fopen('c:/sinMif/sin8bit_128.mif','wt');  %åˆ›å»ºmifæ–‡ä»¶
+% å†™å…¥mifæ–‡ä»¶æ–‡ä»¶å¤´
+fprintf(fild,'%s\n','WIDTH=8;');    %ä½å®½
+fprintf(fild,'%s\n\n','DEPTH=128;');   %æ·±åº¦
+fprintf(fild,'%s\n','ADDRESS_RADIX=BIN;');  %åœ°å€æ ¼å¼
+fprintf(fild,'%s\n\n','DATA_RADIX=BIN;');   %æ•°æ®æ ¼å¼
+fprintf(fild,'%s\t','CONTENT'); %åœ°å€
 fprintf(fild,'%s\n','BEGIN');
 
 for i = 1 : N
-    s2(i) = round(s(i));    %¶ÔĞ¡ÊıËÄÉáÎåÈëÈ¡Õû
+    s2(i) = round(s(i));    %å¯¹å°æ•°å››èˆäº”å…¥å–æ•´
    
     % addr : data;
-    fprintf(fild,'\t%s\t',dec2bin((i-1),10)); %µØÖ·´Ó0¿ªÊ¼±àÂë
+    fprintf(fild,'\t%s\t',dec2bin((i-1),10)); %åœ°å€ä»0å¼€å§‹ç¼–ç 
     fprintf(fild,'%s\t',':');
     fprintf(fild,'%s',dec2bin(s2(i),8));
     fprintf(fild,'%s\n',';');
