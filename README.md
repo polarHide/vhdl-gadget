@@ -13,4 +13,6 @@
 [验证对STD_LOGIC_VECTOR的downto,to,赋值的理解](https://github.com/polarHide/vhdl-gadget/blob/master/vector2.vhd)  
 [自动加载型16位二进制数计数器（16位可控分频器）：单进程实现](https://github.com/polarHide/vhdl-gadget/blob/master/coun16b.vhd)  
 [自动加载型16位二进制数计数器（16位可控分频器）：2进程实现](https://github.com/polarHide/vhdl-gadget/blob/master/counter16b.vhd)  
-[每5位串行二进制输入，输出奇偶校验结果](https://github.com/polarHide/vhdl-gadget/blob/master/parity5checker.vhd)
+[每5位串行二进制输入，输出奇偶校验结果](https://github.com/polarHide/vhdl-gadget/blob/master/parity5checker.vhd)  
+[使用matlab生成mif文件，作为8位数据线、10位地址线的RAM程序的初始化文件](https://github.com/polarHide/vhdl-gadget/blob/master/sinMif.m)    
+[生成的mif文件：sin8bit_128.mif](https://github.com/polarHide/vhdl-gadget/blob/master/sin8bit_128.mif)  
