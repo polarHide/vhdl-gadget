@@ -1,5 +1,5 @@
 -- file : RAM108.vhd
--- function : 8位数据线,10位地址线的RAM程序(使用sin8bit_128.mif作为初始化数据文件)
+-- function : 8位数据线,10位地址线的RAM程序 (使用sin8bit_128.mif作为初始化数据文件)
 -- author : ojw
 -- createDate : 2019-10-22
 
