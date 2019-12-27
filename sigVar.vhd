@@ -1,5 +1,5 @@
 -- file : sigVar.vhd
--- function : compare signal and variable in one
+-- function : äºŒè¿›ç¨‹æ¯”è¾ƒsignalä¸variableç±»å‹çš„èµ‹å€¼é¡ºåº
 -- author : ojw
 -- createDate : 2019-10-24
 
@@ -7,9 +7,8 @@ library ieee;
 use ieee.std_logic_1164.all;
  
 entity sigVar is
-	port
-	(
-						 clk : in std_logic;
+port(
+		clk 				 : in std_logic;
 		x_sig_out, y_sig_out : out integer range 15 downto 0;
 		a_sig_out, b_sig_out : out std_logic_vector(7 downto 0);
 		x_var_out, y_var_out : out integer range 15 downto 0;
@@ -18,36 +17,36 @@ entity sigVar is
 end sigVar;
 
 architecture bhv of sigVar is
-	signal x_sig, y_sig : integer range 15 downto 0;	-- ¶¨ÒåĞÅºÅ
+	signal x_sig, y_sig : integer range 15 downto 0;	-- å®šä¹‰ä¿¡å·
 	signal a_sig, b_sig : std_logic_vector(7 downto 0);
 begin
 	process(clk)
 	begin
 		if rising_edge(clk) then
-		b_sig <= "10110100";	-- ĞÅºÅ¸³Öµ
+		b_sig <= "10110100";	-- ä¿¡å·èµ‹å€¼
 		x_sig <= 11;
 		y_sig <= 2 + x_sig;
 		a_sig <= b_sig;
 		a_sig(5 downto 0) <= b_sig(7 downto 2);
 	end if;
 	end process;
-		x_sig_out <= x_sig;		-- ĞÅºÅÊä³ö
+		x_sig_out <= x_sig;		-- ä¿¡å·è¾“å‡º
 		y_sig_out <= y_sig;
 		a_sig_out <= a_sig;
 		b_sig_out <= b_sig;
 		
 	process(clk)	
-		variable x_var, y_var : integer range 15 downto 0;	-- ¶¨Òå±äÁ¿
+		variable x_var, y_var : integer range 15 downto 0;	-- å®šä¹‰å˜é‡
 		variable a_var, b_var : std_logic_vector(7 downto 0);	
 	begin
 		if rising_edge(clk) then
-		b_var := "10110100";	-- ±äÁ¿¸³Öµ
+		b_var := "10110100";	-- å˜é‡èµ‹å€¼
 		x_var := 11;
 		y_var := 2 + x_var;
 		a_var := b_var;
 		a_var(5 downto 0) := b_var(7 downto 2);
 	end if;	
-		x_var_out <= x_var;	-- ±äÁ¿Êä³ö
+		x_var_out <= x_var;	-- å˜é‡è¾“å‡º
 		y_var_out <= y_var;
 		a_var_out <= a_var;
 		b_var_out <= b_var;	
