@@ -17,4 +17,4 @@
 [使用matlab生成mif文件，作为8位数据线、10位地址线的RAM程序的初始化文件](https://github.com/polarHide/vhdl-gadget/blob/master/sinMif.m)    
 [生成的mif文件：sin8bit_128.mif](https://github.com/polarHide/vhdl-gadget/blob/master/sin8bit_128.mif)  
 [8位数据线,10位地址线的RAM程序 (使用sin8bit_128.mif作为初始化数据文件)](https://github.com/polarHide/vhdl-gadget/blob/master/RAM108.vhd)  
-
+[二进程比较signal与variable类型的赋值顺序](https://github.com/polarHide/vhdl-gadget/blob/master/sigVar.vhd)  
