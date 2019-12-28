@@ -1,5 +1,6 @@
 -- file : fsm3process.vhd
--- function : demo 10-1 in three process(better version)
+-- function : 主控组合进程拆分为状态转换、输出控制信号进程(三进程)
+-- source : demo 10-1 in three process(better version)
 -- author : ojw
 -- createDate : 2019-10-31
 
@@ -7,17 +8,18 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity fsm3process is
-	port (	  clk, reset : in STD_LOGIC;
-			state_inputs : in STD_LOGIC_VECTOR(0 to 1);
-			comb_outputs : out INTEGER RANGE 0 to 15
-		  );
+	port(
+		clk, reset   : in STD_LOGIC;
+		state_inputs : in STD_LOGIC_VECTOR(0 to 1);
+		comb_outputs : out INTEGER RANGE 0 to 15
+		);
 end fsm3process;
 
 architecture bhv of fsm3process is
 	type FSM_ST is (s0, s1, s2, s3, s4);
 	signal c_st, next_state : FSM_ST;
 begin
-	REG : process (reset, clk)	-- ʱ�����
+	REG : process (reset, clk)	-- Ê±Ðò½ø³Ì
 	begin
 		if reset = '0' then
 			c_st <= s0;
@@ -25,7 +27,7 @@ begin
 			c_st <= next_state;
 		end if;
 	end process REG;
-	COM1 : process (c_st, state_inputs)	-- state����
+	COM1 : process (c_st, state_inputs)	-- state¿ØÖÆ
 	begin
 		case c_st is
 			when s0 => 	if state_inputs = "00" then next_state <= s0;
@@ -45,7 +47,7 @@ begin
 		end case;
 	end process COM1;
 	
-	COM2 : process (c_st)	-- �������
+	COM2 : process (c_st)	-- Êä³ö¿ØÖÆ
 	begin
 		case c_st is
 			when s0 => comb_outputs <= 5;						
