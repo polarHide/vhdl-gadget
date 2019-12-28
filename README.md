@@ -18,3 +18,8 @@
 [生成的mif文件：sin8bit_128.mif](https://github.com/polarHide/vhdl-gadget/blob/master/sin8bit_128.mif)  
 [8位数据线,10位地址线的RAM程序 (使用sin8bit_128.mif作为初始化数据文件)](https://github.com/polarHide/vhdl-gadget/blob/master/RAM108.vhd)  
 [二进程比较signal与variable类型的赋值顺序](https://github.com/polarHide/vhdl-gadget/blob/master/sigVar.vhd)  
+[使用主控组合进程(二进程)](https://github.com/polarHide/vhdl-gadget/blob/master/fsm2process.vhd)  
+[主控组合进程拆分为状态转换、输出控制信号进程(三进程)](https://github.com/polarHide/vhdl-gadget/blob/master/fsm3process.vhd)  
+[直接输出型编码方式 定义状态变量](https://github.com/polarHide/vhdl-gadget/blob/master/fsmDiretOutput.vhd)  
+[一位热码编码方式 定义状态变量](https://github.com/polarHide/vhdl-gadget/blob/master/fsmOneHotOutput.vhd)  
+[顺序编码方式 定义状态变量](https://github.com/polarHide/vhdl-gadget/blob/master/fsmOrderOutput.vhd)  
