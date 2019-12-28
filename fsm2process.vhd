@@ -1,5 +1,6 @@
 -- file : fsm2process.vhd
--- function : demo 10-1 in two process(original version)
+-- function : ä½¿ç”¨ä¸»æ§ç»„åˆè¿›ç¨‹(äºŒè¿›ç¨‹)
+-- source ï¼š demo 10-1 in two process(original version)
 -- author : ojw
 -- createDate : 2019-10-30
 
@@ -7,17 +8,18 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity fsm2process is
-	port (	  clk, reset : in STD_LOGIC;
-			state_inputs : in STD_LOGIC_VECTOR(0 to 1);
-			comb_outputs : out INTEGER RANGE 0 to 15
-		  );
+	port(
+		clk, reset   : in STD_LOGIC;
+		state_inputs : in STD_LOGIC_VECTOR(0 to 1);
+		comb_outputs : out INTEGER RANGE 0 to 15
+		);
 end fsm2process;
 
 architecture bhv of fsm2process is
 	type FSM_ST is (s0, s1, s2, s3, s4);
 	signal c_st, next_state : FSM_ST;
 begin
-	REG : process (reset, clk)	-- Ê±Ğò½ø³Ì
+	REG : process (reset, clk)	-- æ—¶åºè¿›ç¨‹
 	begin
 		if reset = '0' then
 			c_st <= s0;
@@ -25,7 +27,7 @@ begin
 			c_st <= next_state;
 		end if;
 	end process REG;
-	COM : process (c_st, state_inputs)	-- ×éºÏ½ø³Ì£¨×´Ì¬ÓëÊä³ö£©
+	COM : process (c_st, state_inputs)	-- ç»„åˆè¿›ç¨‹ï¼ˆçŠ¶æ€ä¸è¾“å‡ºï¼‰
 	begin
 		case c_st is
 			when s0 => comb_outputs <= 5;
