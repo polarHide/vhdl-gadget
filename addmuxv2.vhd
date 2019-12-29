@@ -10,7 +10,7 @@ use ieee.std_logic_arith.all;
 
 entity addmuxv2 is
 	port (
-			R 		   : out std_logic_vector(7 downto 0);
+			R 	   : out std_logic_vector(7 downto 0);
 			sel 	   : in std_logic;
 			A, B, C, D : in std_logic_vector(7 downto 0)
 		  );
