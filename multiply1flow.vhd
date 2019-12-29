@@ -1,5 +1,5 @@
 -- file : multiply1flow.vhd
--- fuction : rout = ((a0 * a1) * a2) * a3
+-- fuction : æµæ°´çº¿æŠ€æœ¯è¿›è¡Œå®ç°è¿ç»­ä¹˜æ³•å™¨rout = ((a0 * a1) * a2) * a3
 -- author : ojw
 -- createDate : 2019-11-09
 
@@ -21,8 +21,8 @@ architecture bhv of multiply1flow is
 	signal temp1 : std_logic_vector(2*s-1 downto 0);
 	signal temp2 : std_logic_vector(3*s-1 downto 0);
 	signal temp3 : std_logic_vector(4*s-1 downto 0);
-	signal d0 : std_logic_vector(s-1 downto 0);	-- ²¹ÁãÏòÁ¿
-	signal d1 : std_logic_vector(2*s-1 downto 0);	-- ²¹ÁãÏòÁ¿
+	signal d0 : std_logic_vector(s-1 downto 0);	-- Â²Â¹ÃÃ£ÃÃ²ÃÂ¿
+	signal d1 : std_logic_vector(2*s-1 downto 0);	-- Â²Â¹ÃÃ£ÃÃ²ÃÂ¿
 	
 	begin
 		d0 <= (others => '0');
