@@ -23,3 +23,8 @@
 [直接输出型编码方式 定义状态变量](https://github.com/polarHide/vhdl-gadget/blob/master/fsmDiretOutput.vhd)  
 [一位热码编码方式 定义状态变量](https://github.com/polarHide/vhdl-gadget/blob/master/fsmOneHotOutput.vhd)  
 [顺序编码方式 定义状态变量](https://github.com/polarHide/vhdl-gadget/blob/master/fsmOrderOutput.vhd)  
+[利用资源共享的面积优化方法(选乘器优化前)](https://github.com/polarHide/vhdl-gadget/blob/master/addmux.vhd)  
+[利用资源共享的面积优化方法(选乘器优化后)](https://github.com/polarHide/vhdl-gadget/blob/master/addmuxv2.vhd)  
+[连续乘法器rout = ((a0 * a1) * a2) * a3](https://github.com/polarHide/vhdl-gadget/edit/master/multiply1.vhd)  
+[连续乘法器rout = (a0 * a1) * (a2 * a3)](https://github.com/polarHide/vhdl-gadget/edit/master/multiply2.vhd)
+[流水线技术进行实现连续乘法器rout = ((a0 * a1) * a2) * a3](https://github.com/polarHide/vhdl-gadget/edit/master/multiply1flow.vhd)  
