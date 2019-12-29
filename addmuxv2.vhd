@@ -1,5 +1,5 @@
 -- file : addmuxv2.vhd
--- fuction : original task9-9 before areal optimization
+-- fuction : 利用资源共享的面积优化方法(选乘器优化后)
 -- author : ojw
 -- createDate : 2019-11-06
 
@@ -10,8 +10,8 @@ use ieee.std_logic_arith.all;
 
 entity addmuxv2 is
 	port (
-			R : out std_logic_vector(7 downto 0);
-			sel : in std_logic;
+			R 		   : out std_logic_vector(7 downto 0);
+			sel 	   : in std_logic;
 			A, B, C, D : in std_logic_vector(7 downto 0)
 		  );
 end addmuxv2;
