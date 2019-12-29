@@ -1,5 +1,5 @@
 -- file : multiply1.vhd
--- fuction : rout = (a0 * a1) * (a2 * a3)
+-- fuction : 连续乘法器rout = (a0 * a1) * (a2 * a3)
 -- author : ojw
 -- createDate : 2019-11-12
 
@@ -11,9 +11,9 @@ use ieee.std_logic_arith.all;
 entity multiply2 is
 	generic(s : integer := 8);
 	port(
-		clk : in std_logic;
+		clk            : in std_logic;
 		a0, a1, a2, a3 : in std_logic_vector(s-1 downto 0);
-		rout : out std_logic_vector(4*s-1 downto 0)
+		rout           : out std_logic_vector(4*s-1 downto 0)
 		);
 end multiply2;
 
