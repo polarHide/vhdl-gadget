@@ -1,5 +1,5 @@
 -- file : addmux.vhd
--- fuction : original task9-9 before areal optimization
+-- fuction : 利用资源共享的面积优化方法(优化前)
 -- author : ojw
 -- createDate : 2019-11-06
 
