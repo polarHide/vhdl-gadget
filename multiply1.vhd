@@ -1,5 +1,5 @@
 -- file : multiply1.vhd
--- fuction : rout = ((a0 * a1) * a2) * a3
+-- fuction : ËøûÁª≠‰πòÊ≥ïÂô®rout = ((a0 * a1) * a2) * a3
 -- author : ojw
 -- createDate : 2019-11-09
 
@@ -11,9 +11,9 @@ use ieee.std_logic_arith.all;
 entity multiply1 is
 	generic(s : integer := 8);
 	port(
-		clk : in std_logic;
+		clk            : in std_logic;
 		a0, a1, a2, a3 : in std_logic_vector(s-1 downto 0);
-		rout : out std_logic_vector(4*s-1 downto 0)
+		rout           : out std_logic_vector(4*s-1 downto 0)
 		);
 end multiply1;
 
@@ -21,8 +21,8 @@ architecture bhv of multiply1 is
 	signal temp1 : std_logic_vector(2*s-1 downto 0);
 	signal temp2 : std_logic_vector(3*s-1 downto 0);
 	signal temp3 : std_logic_vector(4*s-1 downto 0);
-	signal d0 : std_logic_vector(s-1 downto 0);	-- ≤π¡„œÚ¡ø
-	signal d1 : std_logic_vector(2*s-1 downto 0);	-- ≤π¡„œÚ¡ø
+	signal d0 : std_logic_vector(s-1 downto 0);	-- ¬≤¬π√Å√£√è√≤√Å¬ø
+	signal d1 : std_logic_vector(2*s-1 downto 0);	-- ¬≤¬π√Å√£√è√≤√Å¬ø
 	
 	begin
 		d0 <= (others => '0');
